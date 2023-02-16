@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import egovframework.example.sample.service.boardService;
 import egovframework.excel.util.ExcelRead;
 import egovframework.excel.util.ExcelReadOption;
+import egovframework.excel.vo.ExcelVO;
 @Service("boardService")
 public class boardServiceImpl implements boardService {
 	
@@ -43,6 +44,18 @@ public class boardServiceImpl implements boardService {
 	            e.printStackTrace();
 	        }
 		
+	}
+
+
+	@Override
+	public List<ExcelVO> getList(ExcelVO vo) {
+		return boardDAO.getList(vo);
+	}
+
+
+	@Override
+	public void insertExcel(ExcelVO vo) {
+		boardDAO.insertBoard(vo);
 	}
 
 }

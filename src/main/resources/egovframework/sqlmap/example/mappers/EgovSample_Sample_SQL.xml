@@ -10,4 +10,12 @@
 			</foreach>
 			select * from dual
 	</insert>
+	
+	<select id="getList" resultType="excelVO">
+		select * from excel
+	</select>
+	
+	<insert id="insertBoard">
+		insert into excel (no,name,id,pwd) values(#{no},#{name},#{id},#{pwd})
+	</insert>
 </mapper>
